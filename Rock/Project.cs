@@ -69,28 +69,27 @@ namespace LiveProgam
             }
             return Player1WinTieLoss;
         }
-        public static string Player2Chooses()
+        public static string Player2Chooses(List<WeaponOfChoice> weaponList)
         {
             Console.WriteLine("Player 2: What do you choose? [rock/paper/scissor]");
             string player2Choice = Console.ReadLine().ToLower();
             if (player2Choice == "rock" || player2Choice == "paper" || player2Choice == "scissor")
             {
                 player2Choice = player2Choice;
+                return player2Choice;
             }
             else
             {
                 Console.WriteLine("I couldn't read that.");
-                Player2Chooses();
             }
-            return player2Choice;
+            return Player2Chooses(weaponList);
         }
 
 
         public static void GameplayLoop(List<WeaponOfChoice> weaponList)
         {
             WeaponOfChoice player1Choice = Player1Choice(weaponList);
-            string player2Choice = Player2Chooses();
-            Console.WriteLine(player2Choice);
+            string player2Choice = Player2Chooses(weaponList);
             Console.WriteLine("Player 1 " + WinTieLoss(player1Choice, player2Choice));
         }
     }
