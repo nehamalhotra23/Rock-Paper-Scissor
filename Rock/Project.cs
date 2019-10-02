@@ -103,10 +103,11 @@ namespace LiveProgam
 
             if(answer == "yes" || answer == "y" )
             {
-            List<WeaponOfChoice> weaponList =  StartGame();
-            GameplayLoop(weaponList);
+               List<WeaponOfChoice> weaponList =  StartGame();
+               GameplayLoop(weaponList);
 
-            } else {
+            } 
+            else {
                 Console.WriteLine("Good Bye");
             }
 

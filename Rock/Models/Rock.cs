@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-namespace Game.Models {
+namespace Game.Models 
+{
 
     public class WeaponOfChoice 
     {
