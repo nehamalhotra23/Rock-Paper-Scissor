@@ -9,17 +9,7 @@ namespace LiveProgam
         static void Main() 
         {
             List<WeaponOfChoice> weaponList =  StartGame();
-            
-            // WeaponOfChoice player1Choice = Player1Choice(weaponList);
-            // Console.WriteLine("Player 2: What do you choose? [rock/paper/scissor]");
-            // string player2Choice = Console.ReadLine().ToLower();
-            // Console.WriteLine("Player 1 " + WinTieLoss(player1Choice, player2Choice));
-
             GameplayLoop(weaponList);
-
-
-
-
         }
 
         public static List<WeaponOfChoice> StartGame() 
@@ -103,6 +93,23 @@ namespace LiveProgam
             string player2Choice = Player2Chooses(weaponList);
 
             Console.WriteLine("Player 1 " + WinTieLoss(player1Choice, player2Choice));
+            PlayAgain();
+        }
+        
+        public static void PlayAgain()
+        {
+            Console.WriteLine("Do you wanna play again?");
+            string answer = Console.ReadLine().ToLower();
+
+            if(answer == "yes" || answer == "y" )
+            {
+            List<WeaponOfChoice> weaponList =  StartGame();
+            GameplayLoop(weaponList);
+
+            } else {
+                Console.WriteLine("Good Bye");
+            }
+
         }
     }
 }
