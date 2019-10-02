@@ -16,23 +16,5 @@ namespace Game.Models {
             PaperStatus = paper;
             ScissorStatus = scissor;
         }
-        // public static string WinTieLoss (WeaponOfChoice weapon, string player2Input)
-        // {
-        //     string Player1WinTieLoss = "";
-        //     switch (player2Input)
-        //     {
-        //         case "rock":
-        //             Player1WinTieLoss = weapon.RockStatus;
-        //              break;
-        //         case "paper":
-        //             Player1WinTieLoss = weapon.PaperStatus;
-        //              break;
-        //         case "scissor":
-        //             Player1WinTieLoss = weapon.ScissorStatus;
-        //              break;
-        //     }
-        //     return Player1WinTieLoss;
-        // }
-
     }
 }
