@@ -37,21 +37,6 @@ namespace LiveProgam
             return weaponList;
         }
 
-        public static WeaponOfChoice Player1Choice(List<WeaponOfChoice> weaponList)
-        {
-            Console.WriteLine("Player 1: What do you choose? [rock/paper/scissor]");
-            string playerChoice = Console.ReadLine().ToLower();
-            WeaponOfChoice weapon = weaponList[0];
-            for (int i=0; i<weaponList.Count; i++)
-                {
-                    if (playerChoice == weaponList[i].Name)
-                    {
-                        weapon = weaponList[i];
-                    }
-                }
-            return weapon;
-        }
-
         public static string WinTieLoss (WeaponOfChoice weapon, string player2Input)
         {
             string Player1WinTieLoss = "";
@@ -69,6 +54,32 @@ namespace LiveProgam
             }
             return Player1WinTieLoss;
         }
+        
+        public static WeaponOfChoice Player1Choice(List<WeaponOfChoice> weaponList)
+        {
+            Console.WriteLine("Player 1: What do you choose? [rock/paper/scissor]");
+            string playerChoice = Console.ReadLine().ToLower();
+            WeaponOfChoice weapon = weaponList[0];
+            for (int i=0; i<weaponList.Count; i++)
+            {
+                if (playerChoice == weaponList[i].Name)
+                {
+                    weapon = weaponList[i];
+                }
+            }
+            
+            if (weapon != weaponList[0])
+                {
+                    return weapon;    
+                }
+                else
+                {
+                    Console.WriteLine("I'm sorry, I couldn't read that.");
+                }
+
+            return Player1Choice(weaponList);
+        }
+
         public static string Player2Chooses(List<WeaponOfChoice> weaponList)
         {
             Console.WriteLine("Player 2: What do you choose? [rock/paper/scissor]");
@@ -90,6 +101,7 @@ namespace LiveProgam
         {
             WeaponOfChoice player1Choice = Player1Choice(weaponList);
             string player2Choice = Player2Chooses(weaponList);
+
             Console.WriteLine("Player 1 " + WinTieLoss(player1Choice, player2Choice));
         }
     }
